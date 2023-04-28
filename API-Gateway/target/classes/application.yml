@@ -1,0 +1,21 @@
+server:
+  port: 8991
+
+eureka:
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: hero-service
+          uri: lb://hero-service
+          predicates:
+            - Path=/hero/**
+        - id: movie-service
+          uri: lb://movie-service
+          predicates:
+            - Path=/movie/**
