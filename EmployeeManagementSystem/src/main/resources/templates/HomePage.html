@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="yellow">
+	<h1 align="center">Axis Bank Employees</h1>
+	<table border="1" cellspacing="0" cellpadding="10" align="center" width="100%">
+		<tr>
+			<th>EmployeeId</th>
+			<th>Name</th>
+			<th>PhoneNumber</th>
+			<th>City</th>
+			<th>Salary</th>
+		</tr>
+		<tr align="center" th:each="employee:${employees}">
+			<td th:text="${employee.employeeId}"></td>
+			<td th:text="${employee.employee_name}"></td>
+			<td th:text="${employee.phoneNumber}"></td>
+			<td th:text="${employee.cityName}"></td>
+			<td th:text="${employee.salary}"></td>
+		</tr>
+	</table><br>
+	<button><a th:href="@{/showNewEmployeeForm}">New Employee</a></button>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="yellow">
+	<h1 align="center">New Employee Form</h1>
+	<form align="center" th:action="@{/saveEmployee}" th:object="${employee}" methode="post">
+		<input type="number" th:field="*{employeeId}" required placeholder="Employee ID"/><br><br>
+		<input type="text" th:field="*{employee_name}" required placeholder="Employee Name"/><br><br>
+		<input type="number" th:field="*{phoneNumber}" required placeholder="Employee phoneNumber"/><br><br>
+		<input type="text" th:field="*{cityName}" required placeholder="Employee City"/><br><br>
+		<input type="number" th:field="*{salary}" required placeholder="Employee Salary"/><br><br>
+		<button type="submit">Save Employee</button>
+	</form>
+</body>
+</html>
